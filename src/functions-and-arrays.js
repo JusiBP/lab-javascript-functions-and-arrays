@@ -1,20 +1,50 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(number1, number2) {
+  console.log ("Max number is: " + (Math.max(number1, number2)))
+  return Math.max(number1, number2)
+}
+
+maxOfTwoNumbers (2, 3)
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(wordsArray) {
+  let longWord = ""
 
+  if (wordsArray.length === 0) {
+    return null
+  }
 
+  wordsArray.forEach(function(word) {
+    if (word.length > longWord.length) {
+      longWord = word
+    }
+  })
+  return longWord
+  }
+
+findLongestWord (words)
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numberArray) {
+  let suma = ""
+  if (numberArray.length === 0) {
+    suma = 0
+    return suma
+  }
+  for ( let i = 0 ; i < numberArray.length ; i++) {
+    suma = Number(suma) + Number(numberArray[i])
+  }
+  console.log (suma)
+  return suma
+}
 
+sumNumbers(numbers)
 
 
 // Iteration #3.1 Bonus:
@@ -26,13 +56,45 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numberArray2) {
+    let preAverage = ""
+    let average = ""
+    if (numberArray2.length === 0) {
+      return null
+    }
+    for ( let i = 0 ; i < numberArray2.length ; i++) {
+      preAverage = (Number(preAverage) + Number(numberArray2[i]))
+      average = preAverage / (Number(numberArray2.length))
+    }
+    console.log (average)
+    return average
 
+}
+
+averageNumbers (numbersAvg)
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArray2) { 
+  let wordsArrayToNum = 0
+
+  if (wordsArray2.length === 0){
+    return null
+  }
+  
+  wordsArray2.forEach((word)=>
+    wordsArrayToNum = wordsArrayToNum + word.length
+  )
+  let wordsArrayAvgNum = wordsArrayToNum/wordsArray2.length
+  console.log("wordsArrayToNum es " + wordsArrayToNum)
+  console.log("wordsArrayAvgNum es " + wordsArrayAvgNum)
+  return wordsArrayAvgNum
+  
+
+  }
+
+averageWordLength(wordsArr)
 
 // Bonus - Iteration #4.1
 function avg() {}
